@@ -1127,7 +1127,8 @@ def analyse_array_3d(array, B_conc ):
 
                 different_neighb = 0
 
-                # iterating over the possible neighbours to find the atoms of a different type compared to the atom selected
+                # iterating over the possible neighbours to find the atoms of a different type 
+				# compared to the atom selected
                 for p in neighb_list:
 
                     ##
@@ -1226,7 +1227,8 @@ def find_total_energy_3d(array,AB_bond):
 
                 different_neighb = 0
 
-                # iterating over the possible neighbours to find the atoms of a different type compared to the atom selected
+                # iterating over the possible neighbours to find the atoms of a different 
+				# type compared to the atom selected
                 for p in neighb_list:
 
                     ##
@@ -1304,7 +1306,8 @@ def tester_3d(grid=True, energy_calc=True, swapper=True):
 
         ##  a 3x3x3 tensor used to test the the function
 
-        testing_matrix = np.array([  [[0, 1, 0], [1, 0, 0], [1, 1, 0]] , [[1, 1, 1], [1, 1, 1], [1, 1, 1]], [[0, 1, 0], [1, 0, 0], [1, 1, 0]]  ])
+        testing_matrix = np.array([  [[0, 1, 0], [1, 0, 0], [1, 1, 0]] , [[1, 1, 1], [1, 1, 1], [1, 1, 1]], 
+								   [[0, 1, 0], [1, 0, 0], [1, 1, 0]]  ])
 
         AB_bond = 1
 
@@ -1770,8 +1773,7 @@ def tester_3d(grid=True, energy_calc=True, swapper=True):
 
         if abs((P_ideal - P_calculated) / P_ideal) > accuracy:
             print(
-                'The frational error in the two probabilities is larger than {0:.3E}, a bug is likely to be the cause'.format(
-                    accuracy))
+                'The frational error in the two probabilities is larger than {0:.3E},a bug is likely to be the cause'.format(accuracy))
             return False
 
         else:
@@ -2058,8 +2060,6 @@ def normalise_ln_g(array, conc, ln_g):
     NA= int(np.round(Ntot *(1-conc)))
     NB= int(np.round(Ntot *conc))
 
-
-    ## TODO:finish normalise function
     if Ntot < 170:  # small enough number to be evaluated
 
         configurations = special.factorial(Ntot)/( special.factorial(NA) * special.factorial(NB) )
